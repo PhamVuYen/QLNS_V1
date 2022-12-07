@@ -14,7 +14,8 @@
             $row['DealineCV'], 
             $row['CreateBy'], 
             $row['CreateDate'], 
-            $row['AsignedTo']
+            $row['AsignedTo'], 
+            $row['Condition']
         ));
        }
     echo json_encode($response);
