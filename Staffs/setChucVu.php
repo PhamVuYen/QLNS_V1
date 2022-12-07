@@ -4,7 +4,9 @@
     $response = array();
    
     if($_SERVER['REQUEST_METHOD']=='POST'){
-         $query = "UPDATE nhanvien SET ChucVu = 'Nhân viên'  ";
+      $MaPB = isset($_POST['MaPB']) ? $_POST['MaPB']: '';
+
+         $query = "UPDATE nhanvien SET ChucVu = 'Nhân viên' WHERE MaPB = '$MaPB' ";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{

@@ -6,11 +6,12 @@
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $ChucVu = isset($_POST['ChucVu']) ? $_POST['ChucVu']: '';
         $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
+        $MaPB = isset($_POST['MaPB']) ? $_POST['MaPB']: '';
        
         
         if(isset($_POST['MaNV']) && isset($_POST['ChucVu']) ){
 
-            $query = "UPDATE nhanvien SET ChucVu = '$ChucVu' WHERE MaNV = '$MaNV' ";
+            $query = "UPDATE nhanvien SET ChucVu = '$ChucVu' WHERE MaNV = '$MaNV'";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{
