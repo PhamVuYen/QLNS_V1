@@ -3,9 +3,6 @@
     include 'Staff.php';
 
     $response = array();
-
-    
-
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
         $TenNV = isset($_POST['TenNV']) ? $_POST['TenNV']: '';
@@ -16,15 +13,15 @@
         $Email = isset($_POST['Email']) ? $_POST['Email']: '';
         $SoCMND = isset($_POST['SoCMND']) ? $_POST['SoCMND']: '';
         $SoTk = isset($_POST['SoTk']) ? $_POST['SoTk']: '';
-        $MaPB = isset($_POST['MaPB']) ? $_POST['MaPB']: '';
+       // $MaPB = isset($_POST['MaPB']) ? $_POST['MaPB']: '';
         $MucLuong = isset($_POST['MucLuong']) ? $_POST['MucLuong']: '';
-        $ChucVu = isset($_POST['ChucVu']) ? $_POST['ChucVu']: '';
+    
         
         if(isset($_POST['MaNV']) && isset($_POST['TenNV']) && isset($_POST['NgaySinh']) && isset($_POST['DiaChi']) && isset($_POST['GioiTinh'])&& isset($_POST['Phone'])
-        && isset($_POST['Email'])&& isset($_POST['SoCMND'])&& isset($_POST['SoTk'])&& isset($_POST['MaPB'])&& isset($_POST['MucLuong'])&& isset($_POST['ChucVu'])){
+        && isset($_POST['Email'])&& isset($_POST['SoCMND'])&& isset($_POST['SoTk'])&& isset($_POST['MaPB'])&& isset($_POST['MucLuong'])){
 
             $query = "UPDATE nhanvien SET TenNV = '$TenNV', NgaySinh = '$NgaySinh', DiaChi = '$DiaChi', GioiTinh = '$GioiTinh', Phone ='$Phone', Email = '$Email', SoCMND = '$SoCMND', SoTk = '$SoTk',
-                         MaPB = '$MaPB', MucLuong = '$MucLuong', ChucVu = '$ChucVu' WHERE MaNV = '$MaNV'";
+                        MucLuong = '$MucLuong' WHERE MaNV = '$MaNV'";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{

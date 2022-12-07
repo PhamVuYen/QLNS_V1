@@ -5,11 +5,11 @@
     $response = array();
    
     if($_SERVER['REQUEST_METHOD']=='POST'){
-        $MaNV = isset($_POST['MaPB']) ? $_POST['MaNV']: '';
+        $MaPB = isset($_POST['MaPB']) ? $_POST['MaPB']: '';
         
         if(isset($_POST['MaPB'])){
 
-            $query = "DELETE FROM phongban WHERE MaPB = '$MaNV' ";
+            $query = "DELETE FROM phongban WHERE MaPB = '$MaPB' ";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{

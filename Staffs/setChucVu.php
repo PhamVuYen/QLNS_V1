@@ -1,18 +1,16 @@
 <?php
-    include '../Connect.php';
-    include 'Department.php';
+    include 'Connect.php';
 
     $response = array();
    
     if($_SERVER['REQUEST_METHOD']=='POST'){
-        $TenPB = isset($_POST['TenPB']) ? $_POST['TenPB']: '';
-        $MaPB = isset($_POST['MaPB']) ? $_POST['MaPB']: '';
-    
+        $ChucVu = isset($_POST['ChucVu']) ? $_POST['ChucVu']: '';
+        $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
+       
         
-        if(isset($_POST['MaPB']) && isset($_POST['TenPB']) ){
+        if(isset($_POST['MaNV']) && isset($_POST['ChucVu']) ){
 
-            $query = "INSERT INTO phongban (MaPB, TenPB) 
-                        VALUES ('$MaPB', '$TenPB')";
+            $query = "UPDATE nhanvien SET ChucVu = '$ChucVu' WHERE MaNV = '$MaNV' ";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{

@@ -9,7 +9,7 @@
         $MaPB = isset($_POST['MaPB']) ? $_POST['MaPB']: '';
        
         
-        if(isset($_POST['MaPB']) && isset($_POST['MaCViec']) ){
+        if(isset($_POST['MaPB']) && isset($_POST['TenPB']) ){
 
             $query = "UPDATE phongban SET TenPB = '$TenPB' WHERE MaPB = '$MaPB' ";
             if($conn->query($query) == TRUE){
