@@ -1,12 +1,12 @@
 <?php
-    include 'Connect.php';
+    include '../Connect.php';
 
     $response = array();
    
     if($_SERVER['REQUEST_METHOD']=='POST'){
-      $MaPB = isset($_POST['MaPB']) ? $_POST['MaPB']: '';
+      $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
 
-         $query = "UPDATE nhanvien SET ChucVu = 'Nhân viên' WHERE MaPB = '$MaPB' ";
+         $query = "UPDATE nhanvien SET ChucVu = 'Nhân viên' WHERE MaNV = '$MaNV' ";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{

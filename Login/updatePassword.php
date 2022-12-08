@@ -1,15 +1,16 @@
 <?php
     include '../Connect.php';
-
+    
     $response = array();
    
     if($_SERVER['REQUEST_METHOD']=='POST'){
+        $Password = isset($_POST['Password']) ? $_POST['Password']: '';
         $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
        
         
-        if(isset($_POST['MaNV'])){
+        if(isset($_POST['MaNV']) && isset($_POST['Password']) ){
 
-            $query = "UPDATE nhanvien SET ChucVu = 'Trưởng phòng' WHERE MaNV = '$MaNV'";
+            $query = "UPDATE nhanvien SET Password = '$Password' WHERE MaNV = '$MaNV' ";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{

@@ -12,9 +12,9 @@
             $row['MaCViec'], 
             $row['TenCViec'], 
             $row['DealineCV'], 
-            $row['CreateBy'], 
+         //   $row['CreateBy'], 
             $row['CreateDate'], 
-            $row['AsignedTo'], 
+          //  $row['AsignedTo'], 
             $row['Condition']
         ));
        }
