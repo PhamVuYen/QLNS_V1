@@ -11,7 +11,7 @@
             $row['MaNV'], 
             $row['NgayCong'], 
             $row['NgayDiMuon'], 
-           
+            $row['Thang']
         ));
        }
     echo json_encode($response);

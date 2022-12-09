@@ -12,11 +12,12 @@
        // $CreateBy = isset($_POST['CreateBy']) ? $_POST['CreateBy']: '';
         $CreateDate = isset($_POST['CreateDate']) ? $_POST['CreateDate']: '';
       //  $AsignedTo = isset($_POST['AsignedTo']) ? $_POST['AsignedTo']: '';
-        
-        if(isset($_POST['MaNV']) && isset($_POST['MaCViec']) && isset($_POST['TenCViec']) && isset($_POST['DealineCV']) && isset($_POST['CreateDate'])){
+      $Status = isset($_POST['Status']) ? $_POST['Status']: '';
 
-            $query = "INSERT INTO congviec (MaNV, MaCViec, TenCViec, DealineCV, CreateDate) 
-                        VALUES ('$MaNV', '$MaCViec', '$TenCViec', '$DealineCV', '$CreateDate')";
+        if(isset($_POST['MaNV']) && isset($_POST['MaCViec']) && isset($_POST['TenCViec']) && isset($_POST['DealineCV']) && isset($_POST['CreateDate']) && isset($_POST['Status'])){
+
+            $query = "INSERT INTO congviec (MaNV, MaCViec, TenCViec, DealineCV, CreateDate,Status) 
+                        VALUES ('$MaNV', '$MaCViec', '$TenCViec', '$DealineCV', '$CreateDate', '$Status')";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{

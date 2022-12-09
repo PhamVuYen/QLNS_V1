@@ -8,9 +8,9 @@
       //  public $CreateBy;
         public $CreateDate;
       //  public $AsignedTo;
-        public $Condition;
+        public $Status;
 
-        function __construct($MaNV, $MaCViec, $TenCViec, $DealineCV,  $CreateDate, $Condition)
+        function __construct($MaNV, $MaCViec, $TenCViec, $DealineCV,  $CreateDate, $Status)
         {
             $this ->MaNV = $MaNV;
             $this ->MaCViec = $MaCViec;
@@ -19,7 +19,7 @@
            // $this ->CreateBy = $CreateBy;
             $this ->CreateDate = $CreateDate;
            // $this ->AsignedTo = $AsignedTo;
-            $this ->Condition = $Condition;
+            $this ->Status = $Status;
         }
     }
 
