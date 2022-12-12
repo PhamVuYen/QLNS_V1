@@ -5,9 +5,9 @@
     $response = array();
     if($_SERVER['REQUEST_METHOD']=='POST'){
       $MaCViec = isset($_POST['MaCViec']) ? $_POST['MaCViec']: '';
-     // $Status = isset($_POST['Status']) ? $_POST['Status']: '';
+        $Status = isset($_POST['Status']) ? $_POST['Status']: '';
 
-      if(isset($_POST['MaCViec'])){
+      if(isset($_POST['MaCViec']) && isset($_POST['Status'])){
 
           $query = "UPDATE congviec SET Status = '$Status'  WHERE MaCViec= '$MaCViec' ";
       
