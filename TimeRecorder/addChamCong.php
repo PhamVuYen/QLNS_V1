@@ -7,12 +7,13 @@
         $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
         $GioDen = isset($_POST['GioDen']) ? $_POST['GioDen']: '';
         $GioVe = isset($_POST['GioVe']) ? $_POST['GioVe']: '';
+        $Ngay = isset($_POST['Ngay']) ? $_POST['Ngay']: '';
         $Thang = isset($_POST['Thang']) ? $_POST['Thang']: '';
 
-        if(isset($_POST['MaNV']) && isset($_POST['GioDen']) && isset($_POST['GioVe']) && isset($_POST['Thang'])  ){
+        if(isset($_POST['MaNV']) && isset($_POST['GioDen']) && isset($_POST['GioVe'])  && isset($_POST['Ngay']) && isset($_POST['Thang'])  ){
 
-            $query = "INSERT INTO bangchamcongngay (MaNV, GioDen, GioVe, Thang) 
-                        VALUES ('$MaNV', '$GioDen', '$GioVe', '$Thang')";
+            $query = "INSERT INTO bangchamcongngay (MaNV, GioDen, GioVe, Ngay, Thang) 
+                        VALUES ('$MaNV', '$GioDen', '$GioVe', '$Ngay', '$Thang')";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{

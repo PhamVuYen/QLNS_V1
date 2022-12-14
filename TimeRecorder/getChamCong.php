@@ -9,7 +9,8 @@
         array_push($response, new TimeRecorder(
             $row['MaNV'], 
             $row['GioDen'], 
-            $row['GioVe'], 
+            $row['GioVe'],
+            $row['Ngay'], 
             $row['Thang']
         ));
        }
@@ -18,13 +19,16 @@
         public $MaNV;
         public $GioDen;
         public $GioVe;
+        public $Ngay;
         public $Thang;
-        function __construct($MaNV, $GioDen, $GioVe, $Thang)
+        function __construct($MaNV, $GioDen, $GioVe, $Ngay, $Thang)
         {
             $this->MaNV = $MaNV;
             $this->GioDen = $GioDen;
             $this->GioVe = $GioVe;
+            $this->Ngay = $Ngay;
             $this->Thang = $Thang;
+
         }
     }
     echo json_encode($response);
