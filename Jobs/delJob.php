@@ -5,12 +5,11 @@
     $response = array();
    
     if($_SERVER['REQUEST_METHOD']=='POST'){
-        $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
         $MaCViec = isset($_POST['MaCViec']) ? $_POST['MaCViec']: '';
         
-        if(isset($_POST['MaNV']) && isset($_POST['MaCViec']) ){
+        if(isset($_POST['MaCViec']) ){
 
-            $query = "DELETE FROM congviec WHERE MaNV = '$MaNV' AND MaCViec ='$MaCViec' ";
+            $query = "DELETE FROM congviec WHERE  MaCViec ='$MaCViec' ";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{

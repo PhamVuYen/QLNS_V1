@@ -1,14 +1,14 @@
 <?php
     include '../Connect.php';
-    include 'Job.php';
+   include 'Job.php';
 
     $response = array();
     if($_SERVER['REQUEST_METHOD']=='POST'){
-      $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
+      $CreateBy = isset($_POST['CreateBy']) ? $_POST['CreateBy']: '';
       
-      if(isset($_POST['MaNV'])){
+      if(isset($_POST['CreateBy'])){
 
-          $query = "SELECT *  FROM congviec WHERE MaNV = '$MaNV' ";
+          $query = "SELECT * FROM congviec WHERE CreateBy = '$CreateBy' ";
           $data = mysqli_query($conn, $query);
       
           while ($row = mysqli_fetch_assoc($data)){
@@ -39,5 +39,7 @@
       $response['error'] = true;
       $response['message'] = "Invalid Request"; 
    }
+    
+
     echo json_encode($response);
 ?>
