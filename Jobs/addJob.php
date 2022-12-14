@@ -16,7 +16,7 @@
 
         if(isset($_POST['MaNV']) && isset($_POST['MaCViec']) && isset($_POST['TenCViec']) && isset($_POST['DealineCV']) && isset($_POST['CreateDate']) && isset($_POST['Status'])){
 
-            $query = "INSERT INTO congviec (MaNV, MaCViec, TenCViec, DealineCV, CreateDate,Status) 
+            $query = "INSERT INTO congviec (MaNV, MaCViec, TenCViec, DealineCV, CreateDate, Status) 
                         VALUES ('$MaNV', '$MaCViec', '$TenCViec', '$DealineCV', '$CreateDate', '$Status')";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";

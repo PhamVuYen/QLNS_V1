@@ -8,11 +8,12 @@
         $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
         $MaCViec = isset($_POST['NgayCong']) ? $_POST['NgayCong']: '';
         $TenCViec = isset($_POST['NgayDiMuon']) ? $_POST['NgayDiMuon']: '';
-        
-        if(isset($_POST['MaNV']) && isset($_POST['NgayCong']) && isset($_POST['NgayDiMuon']) ){
+        $Thang = isset($_POST['Thang']) ? $_POST['Thang']: '';
 
-            $query = "INSERT INTO bangchamcong (MaNV, NgayCong, NgayDiMuon) 
-                        VALUES ('$MaNV', '$NgayCong', '$NgayDiMuon')";
+        if(isset($_POST['MaNV']) && isset($_POST['NgayCong']) && isset($_POST['NgayDiMuon']) && isset($_POST['Thang'])  ){
+
+            $query = "INSERT INTO bangchamcong (MaNV, NgayCong, NgayDiMuon, Thang) 
+                        VALUES ('$MaNV', '$NgayCong', '$NgayDiMuon', '$Thang')";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{
