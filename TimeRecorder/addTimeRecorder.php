@@ -6,8 +6,8 @@
    
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
-        $MaCViec = isset($_POST['NgayCong']) ? $_POST['NgayCong']: '';
-        $TenCViec = isset($_POST['NgayDiMuon']) ? $_POST['NgayDiMuon']: '';
+        $NgayCong = isset($_POST['NgayCong']) ? $_POST['NgayCong']: '';
+        $NgayDiMuon = isset($_POST['NgayDiMuon']) ? $_POST['NgayDiMuon']: '';
         $PhutDiMuon = isset($_POST['PhutDiMuon']) ? $_POST['PhutDiMuon']: '';
         $Thang = isset($_POST['Thang']) ? $_POST['Thang']: '';
 
