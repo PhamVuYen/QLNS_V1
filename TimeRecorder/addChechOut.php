@@ -9,7 +9,7 @@
         $Ngay = isset($_POST['Ngay']) ? $_POST['Ngay']: '';
         $Thang = isset($_POST['Thang']) ? $_POST['Thang']: '';
 
-        if(isset($_POST['MaNV']) && isset($_POST['GioVe']) && isset($_POST['Ngay']) && isset($_POST['Thang'])  ){
+        if(isset($_POST['MaNV']) && isset($_POST['GioVe']) && isset($_POST['Ngay'])  ){
             
             $query = "UPDATE bangchamcongngay  SET GioVe = '$GioVe' WHere MaNV = '$MaNV' AND Ngay = '$Ngay'";
             if($conn->query($query) == TRUE){
