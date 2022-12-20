@@ -15,7 +15,6 @@
 
             while ($row = mysqli_fetch_assoc($data)){
              array_push($response, new TimeRecorder(
-
                  $row['GioDen']
              ));
             }
