@@ -8,12 +8,13 @@
         $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
         $MaCViec = isset($_POST['NgayCong']) ? $_POST['NgayCong']: '';
         $TenCViec = isset($_POST['NgayDiMuon']) ? $_POST['NgayDiMuon']: '';
+        $PhutDiMuon = isset($_POST['PhutDiMuon']) ? $_POST['PhutDiMuon']: '';
         $Thang = isset($_POST['Thang']) ? $_POST['Thang']: '';
 
-        if(isset($_POST['MaNV']) && isset($_POST['NgayCong']) && isset($_POST['NgayDiMuon']) && isset($_POST['Thang'])  ){
+        if(isset($_POST['MaNV']) && isset($_POST['NgayCong']) && isset($_POST['NgayDiMuon']) && isset($_POST['PhutDiMuon']) && isset($_POST['Thang'])  ){
 
-            $query = "INSERT INTO bangchamcong (MaNV, NgayCong, NgayDiMuon, Thang) 
-                        VALUES ('$MaNV', '$NgayCong', '$NgayDiMuon', '$Thang')";
+            $query = "INSERT INTO bangchamcong (MaNV, NgayCong, NgayDiMuon, PhutDiMuon, Thang) 
+                        VALUES ('$MaNV', '$NgayCong', '$NgayDiMuon', '$PhutDiMuon', '$Thang')";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{

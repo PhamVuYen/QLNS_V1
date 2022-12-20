@@ -4,18 +4,17 @@
     $response = array();
    
     if($_SERVER['REQUEST_METHOD']=='POST'){
+       
         $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
-        $GioVe = isset($_POST['GioVe']) ? $_POST['GioVe']: '';
-        $Ngay = isset($_POST['Ngay']) ? $_POST['Ngay']: '';
+        $MaCViec = isset($_POST['NgayCong']) ? $_POST['NgayCong']: '';
+        $TenCViec = isset($_POST['NgayDiMuon']) ? $_POST['NgayDiMuon']: '';
+        $PhutDiMuon = isset($_POST['PhutDiMuon']) ? $_POST['PhutDiMuon']: '';
         $Thang = isset($_POST['Thang']) ? $_POST['Thang']: '';
 
-<<<<<<< HEAD
-        if(isset($_POST['MaNV']) && isset($_POST['GioVe']) && isset($_POST['Ngay'])  ){
-=======
-        if(isset($_POST['MaNV']) && isset($_POST['GioVe']) && isset($_POST['Ngay']) ){
->>>>>>> f4efcb13ad40b0b4143f43c26ea30eaf75a38276
+
+        if(isset($_POST['MaNV']) && isset($_POST['NgayCong']) && isset($_POST['NgayDiMuon']) && isset($_POST['PhutDiMuon']) && isset($_POST['Thang']) ){
             
-            $query = "UPDATE bangchamcongngay  SET GioVe = '$GioVe' WHere MaNV = '$MaNV' AND Ngay = '$Ngay'";
+            $query = "UPDATE bangchamcong  SET NgayCong = '$NgayCong', NgayDiMuon = '$NgayDiMuon' ,  PhutDiMuon = '$PhutDiMuon', Thang = '$Thang'  WHere MaNV = '$MaNV'";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{

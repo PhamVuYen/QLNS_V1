@@ -11,6 +11,7 @@
             $row['MaNV'], 
             $row['NgayCong'], 
             $row['NgayDiMuon'], 
+            $row['PhutDiMuon'], 
             $row['Thang']
         ));
        }
