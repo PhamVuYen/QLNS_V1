@@ -16,7 +16,6 @@
                 array_push($response, new TimeRecorder(
                     $row['MaNV'], 
                     $row['NgayCong'], 
-                    $row['NgayDiMuon'], 
                     $row['PhutDiMuon'], 
                     $row['Thang']
                 ));
