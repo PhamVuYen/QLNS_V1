@@ -1,31 +1,15 @@
 <?php
     include '../Connect.php';
+
     // include 'getChamCong.php';
-
     $response = array();
-    class TimeRecorder{
-        public $MaNV;
-        public $GioDen;
-        public $GioVe;
-        public $Ngay;
-        public $Thang;
-        function __construct($MaNV, $GioDen, $GioVe, $Ngay, $Thang)
-        {
-            $this->MaNV = $MaNV;
-            $this->GioDen = $GioDen;
-            $this->GioVe = $GioVe;
-            $this->Ngay = $Ngay;
-            $this->Thang = $Thang;
-
-        }
-    }
-
     if($_SERVER['REQUEST_METHOD']=='POST'){
+
         $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
         $Thang = isset($_POST['Thang']) ? $_POST['Thang']: '';
-        if(isset($_POST['MaNV']) && isset($_POST['Thang']) ){
+        if(isset($_POST['Thang']) && isset($_POST['Thang'])){
 
-            $query = "SELECT * FROM bangchamcongngay WHERE MaNV = '$MaNV' and Thang = '$Thang'";
+            $query = "SELECT * FROM bangchamcongngay WHERE MaNV = '$MaNV' AND Thang = '$Thang'";
             $data = mysqli_query($conn, $query);
                while ($row = mysqli_fetch_assoc($data)){
                 array_push($response, new TimeRecorder(
@@ -51,6 +35,22 @@
         $response['error'] = true;
         $response['message'] = "Invalid Request"; 
      }
+     class TimeRecorder{
+        public $MaNV;
+        public $GioDen;
+        public $GioVe;
+        public $Ngay;
+        public $Thang;
+        function __construct($MaNV, $GioDen, $GioVe, $Ngay, $Thang)
+        {
+            $this->MaNV = $MaNV;
+            $this->GioDen = $GioDen;
+            $this->GioVe = $GioVe;
+            $this->Ngay = $Ngay;
+            $this->Thang = $Thang;
+
+        }
+    }
    
     echo json_encode($response);
 ?>
