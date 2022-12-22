@@ -11,7 +11,7 @@
         $Thang = isset($_POST['Thang']) ? $_POST['Thang']: '';
 
 
-        if(isset($_POST['MaNV']) && isset($_POST['NgayCong']) && isset($_POST['NgayDiMuon']) && isset($_POST['Thang']) ){
+        if(isset($_POST['MaNV']) && isset($_POST['NgayCong']) && isset($_POST['PhutDiMuon']) && isset($_POST['Thang']) ){
             
             $query = "UPDATE bangchamcong  SET NgayCong = '$NgayCong',  PhutDiMuon = '$PhutDiMuon', Thang = '$Thang'  WHere MaNV = '$MaNV'";
             if($conn->query($query) == TRUE){

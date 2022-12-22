@@ -1,5 +1,8 @@
 <?php
 include '../Connect.php';
+
+$response = array();
+
 class TimeRecorder{
     public $MaNV;
     public $GioDen;
@@ -16,7 +19,7 @@ class TimeRecorder{
 
     }
 }
-$response = array();
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -38,4 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            }
     }
 }
+echo json_encode($response);
+
 ?>
