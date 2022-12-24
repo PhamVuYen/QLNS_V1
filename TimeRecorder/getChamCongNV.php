@@ -1,14 +1,12 @@
 <?php
     include '../Connect.php';
-    $response = array();
 
-    
+    // include 'getChamCong.php';
+    $response = array();
     if($_SERVER['REQUEST_METHOD']=='POST'){
 
         $MaNV = isset($_POST['MaNV']) ? $_POST['MaNV']: '';
         $Thang = isset($_POST['Thang']) ? $_POST['Thang']: '';
-
-
         if(isset($_POST['Thang']) && isset($_POST['Thang'])){
 
             $query = "SELECT * FROM bangchamcongngay WHERE MaNV = '$MaNV' AND Thang = '$Thang'";
@@ -16,16 +14,16 @@
                while ($row = mysqli_fetch_assoc($data)){
                 array_push($response, new TimeRecorder(
                     $row['MaNV'], 
-                     $row['GioDen'], 
+                    $row['GioDen'], 
                     $row['GioVe'],
                     $row['Ngay'], 
                     $row['Thang']
                 ));
                }
             if($conn->query($query) == TRUE){
-                 $response['message'] = "done";
+                 // $response['message'] = "done";
             }else{
-                $response['message'] = "error";
+                // $response['message'] = "error";
             }
         
         }else{

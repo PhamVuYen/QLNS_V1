@@ -20,12 +20,12 @@
                     $row['Thang']
                 ));
                }
-            if($conn->query($query) == TRUE){
-                 $response['message'] = "done";
-            }else{
-                $response['message'] = "error";
-            }
-        
+            // if($conn->query($query) == TRUE){
+            //      $response['message'] = "done";
+            // }else{
+            //     $response['message'] = "error";
+            // }
+         echo json_encode($response);
         }else{
             $response['error'] = true;
             $response['message'] = "Required fields are missing";
@@ -36,5 +36,5 @@
         $response['message'] = "Invalid Request"; 
      }
    
-    echo json_encode($response);
+   
 ?>
