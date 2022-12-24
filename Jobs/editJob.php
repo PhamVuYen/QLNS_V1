@@ -10,13 +10,13 @@
         $TenCViec = isset($_POST['TenCViec']) ? $_POST['TenCViec']: '';
         $DealineCV = isset($_POST['DealineCV']) ? $_POST['DealineCV']: '';
         $Status = isset($_POST['Status']) ? $_POST['Status']: '';
-      //  $CreateBy = isset($_POST['CreateBy']) ? $_POST['CreateBy']: '';
+        $CreateBy = isset($_POST['CreateBy']) ? $_POST['CreateBy']: '';
         // $CreateDate = isset($_POST['CreateDate']) ? $_POST['CreateDate']: '';
        // $AsignedTo = isset($_POST['AsignedTo']) ? $_POST['AsignedTo']: '';
         
-        if(isset($_POST['MaNV']) && isset($_POST['MaCViec']) && isset($_POST['TenCViec']) && isset($_POST['DealineCV']) ){
+        if(isset($_POST['MaNV']) && isset($_POST['MaCViec']) && isset($_POST['TenCViec']) && isset($_POST['CreateBy']) ){
 
-            $query = "UPDATE congviec SET TenCViec = '$TenCViec', DealineCV = '$DealineCV' , MaNV = '$MaNV', Status = '$Status' WHERE MaCViec = '$MaCViec' ";
+            $query = "UPDATE congviec SET TenCViec = '$TenCViec', DealineCV = '$DealineCV' , MaNV = '$MaNV', Status = '$Status', CreateBy = '$CreateBy' WHERE MaCViec = '$MaCViec' ";
             if($conn->query($query) == TRUE){
                  $response['message'] = "done";
             }else{
